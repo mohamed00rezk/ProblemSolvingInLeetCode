@@ -5,13 +5,13 @@ Console.WriteLine("Hello, World!");
 
 
 
-String s = "[([]])"; // "(([]){})"; // "{[]})("; // "(("; // "()";
-ValidParentheses v = new ValidParentheses();
-var res = v.IsValid(s);
-Console.WriteLine("res: " +  res);
+//String s = "[([]])"; // "(([]){})"; // "{[]})("; // "(("; // "()";
+//ValidParentheses v = new ValidParentheses();
+//var res = v.IsValid(s);
+//Console.WriteLine("res: " +  res);
 
 
-//TwoSum s = new TwoSum();
-//int[] nums = new[] { 2, 7, 11, 15 };
-//int[] res = s.TwoSum_1(nums, 9);
-//Console.WriteLine("res: " + res.First() + " , " + res.Last());
+TwoSum s = new TwoSum();
+int[] nums =  new[] { 1, 3, 4, 2 };
+int[] res = s.TwoSum_1(nums, 6);
+Console.WriteLine("res: " + res.First() + " , " + res.Last());

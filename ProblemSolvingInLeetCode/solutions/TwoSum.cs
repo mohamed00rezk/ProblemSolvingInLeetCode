@@ -20,11 +20,11 @@ namespace ProblemSolvingInLeetCode.solutions
 
             for (int i = 0; i < nums.Length; i++)
             { 
-                int x = map.Where(x => x.Value + nums[i] == target).Select(res => res.Key).FirstOrDefault();
-                if (x != 0)
+                int val = map.Where(x => ( x.Value + nums[i] == target ) && ( i != x.Key  ) ).Select(res => res.Key).LastOrDefault();
+                if (val != 0)
                 {
                     res[0] = i;
-                    res[1] = x;
+                    res[1] = val;
                     return res;
                 }
             }
