@@ -8,7 +8,30 @@ namespace ProblemSolvingInLeetCode.solutions
 {
     public class TwoSum 
     {
-        // solution 1 O(n)
+        public int[] TwoSum_0(int[] nums, int target)
+        {
+            int[] res = new int[2];
+            Dictionary<int, int> map = new Dictionary<int, int>();
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                var data = map.Where(res =>  (res.Value + nums[i] == target) && (i != res.Key)).LastOrDefault();
+                if (data.Key != 0)
+                {
+                    res[0] = i;
+                    res[1] = data.Key;
+                    return res;
+                }
+                if (!map.ContainsKey(i))
+                {
+                    map.Add(i, nums[i]);
+                }
+            }
+
+            return new int[0];
+        }
+
+        // solution 1 O(n) with Tow for loop
         public int[] TwoSum_1(int[] nums, int target)
         {
             int[] res = new int[2];
