@@ -8,31 +8,28 @@ namespace ProblemSolvingInLeetCode.solutions
 {
     public class TwoSum 
     {
+
         public int[] TwoSum_0(int[] nums, int target)
         {
             int[] res = new int[2];
             Dictionary<int, int> map = new Dictionary<int, int>();
-
+  
             for (int i = 0; i < nums.Length; i++)
             {
-                if (!map.ContainsKey(i))
+                if (map.ContainsKey(target - nums[i]))
                 {
-                    map.Add(nums[i], i);
+                    return new int[] { map[target - nums[i]], i };
                 }
-                var data = map[target - nums[i]];                
-                if (data != 0)
+                else
                 {
-                    res[0] = i;
-                    res[1] = data;
-                    return res;
+                    map.TryAdd(nums[i] , i);
                 }
 
             }
 
-            return new int[0];
+            return default;
         }
 
-        // solution 1 O(n) with Tow for loop
         public int[] TwoSum_1(int[] nums, int target)
         {
             int[] res = new int[2];
@@ -41,16 +38,16 @@ namespace ProblemSolvingInLeetCode.solutions
             {
                 map.Add(i, nums[i]);
             }
-
             for (int i = 0; i < nums.Length; i++)
-            { 
-                int val = map.Where(x => ( x.Value + nums[i] == target ) && ( i != x.Key  ) ).Select(res => res.Key).LastOrDefault();
-                if (val != 0)
+            {
+                KeyValuePair<int, int> data = map.Where(x => (x.Value + nums[i] == target) && (i != x.Key) ).LastOrDefault();
+                if (data.Key != 0)
                 {
                     res[0] = i;
-                    res[1] = val;
+                    res[1] = data.Key;
                     return res;
                 }
+
             }
 
             return new int[0];

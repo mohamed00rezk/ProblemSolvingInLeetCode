@@ -11,8 +11,8 @@ Console.WriteLine("Hello, World!");
 //var res = v.IsValid(s);
 //Console.WriteLine("res: " + res);
 
-//// TwoSum
-//TwoSum s = new TwoSum();
-//int[] nums = new[] { 1, 3, 4, 2 };
-//int[] res = s.TwoSum_1(nums, 6);
-//Console.WriteLine("res: " + res.First() + " , " + res.Last());
+// TwoSum
+TwoSum s = new TwoSum();
+int[] nums = new[] {0, 4, 3, 0 };
+int[] res = s.TwoSum_0(nums, 0);
+Console.WriteLine("res: " + res.First() + " , " + res.Last());
