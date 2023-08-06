@@ -15,17 +15,18 @@ namespace ProblemSolvingInLeetCode.solutions
 
             for (int i = 0; i < nums.Length; i++)
             {
-                var data = map.Where(res =>  (res.Value + nums[i] == target) && (i != res.Key)).LastOrDefault();
-                if (data.Key != 0)
-                {
-                    res[0] = i;
-                    res[1] = data.Key;
-                    return res;
-                }
                 if (!map.ContainsKey(i))
                 {
-                    map.Add(i, nums[i]);
+                    map.Add(nums[i], i);
                 }
+                var data = map[target - nums[i]];                
+                if (data != 0)
+                {
+                    res[0] = i;
+                    res[1] = data;
+                    return res;
+                }
+
             }
 
             return new int[0];

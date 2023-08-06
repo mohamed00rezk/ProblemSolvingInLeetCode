@@ -25,7 +25,7 @@ namespace ProblemSolvingInLeetCode.solutions
             {
                 return false;
             }
-            if (checkIfALLInputIsOpenOrClose(chars))
+            if (checkIfALLInputIsOpenOrClose(chars)) // "({[   ]})"
             {
                 return false;
             }
@@ -43,7 +43,9 @@ namespace ProblemSolvingInLeetCode.solutions
                 {
                     return false;
                 }
+
                 outputCharMap.Add(outputCharMap.Count(), ch.Value);     
+
                 if (PATTERNOFCLOSE.Contains(ch.Value))
                 {
                     char openCh = PATTERN_MAP.FirstOrDefault(o => o.Value.Equals(ch.Value)).Key;                  
