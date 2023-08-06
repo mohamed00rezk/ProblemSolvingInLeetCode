@@ -27,7 +27,7 @@ namespace ProblemSolvingInLeetCode.solutions
 
             }
 
-            return default;
+            return  new int[0];
         }
 
         public int[] TwoSum_1(int[] nums, int target)

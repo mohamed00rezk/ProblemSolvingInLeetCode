@@ -12,15 +12,11 @@ namespace ProblemSolvingInLeetCode.solutions
         private static string PATTERN = "(){}[]";
         private static string PATTERNOFOPEN = "({[";
         private static string PATTERNOFCLOSE = ")}]";
-
         private static Dictionary<char, char> PATTERN_MAP = new Dictionary<char, char>() {{ '(', ')' } , { '{', '}' } , { '[', ']' } };
 
-
         public bool IsValid(string input)
-        {
-            
+        { 
             List<Char> chars = input.ToList();
-
             if (chars.Count % 2 == 1)
             {
                 return false;
@@ -35,8 +31,8 @@ namespace ProblemSolvingInLeetCode.solutions
             {
                 map.Add(i , chars[i]);
             }
-            Dictionary<int, char> outputCharMap = new Dictionary<int, char>();
 
+            Dictionary<int, char> outputCharMap = new Dictionary<int, char>();
             foreach (KeyValuePair<int ,char> ch in map)
             {
                 if (!PATTERN.Contains(ch.Value))
@@ -66,6 +62,7 @@ namespace ProblemSolvingInLeetCode.solutions
                 }
 
             }
+            
             if (outputCharMap.Count > 0)
             {
                 return false;
