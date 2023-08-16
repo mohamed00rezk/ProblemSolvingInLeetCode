@@ -30,6 +30,8 @@ namespace ProblemSolvingInLeetCode.solutions
             return  new int[0];
         }
 
+
+        // solution 2 O(n2)
         public int[] TwoSum_1(int[] nums, int target)
         {
             int[] res = new int[2];
@@ -52,8 +54,7 @@ namespace ProblemSolvingInLeetCode.solutions
 
             return new int[0];
         }
-
-        // solution 2 O(n2)
+        // solution 1 O(n2)
         public int[] TwoSum_2(int[] nums, int target)
         {
             int[] res = new int[2];
