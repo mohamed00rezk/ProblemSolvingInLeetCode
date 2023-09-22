@@ -9,6 +9,7 @@ namespace ProblemSolvingInLeetCode.solutions
 {
     public class ValidParentheses
     {
+        // stack
         private static string PATTERN = "(){}[]";
         private static string PATTERNOFOPEN = "({[";
         private static string PATTERNOFCLOSE = ")}]";
@@ -105,6 +106,9 @@ namespace ProblemSolvingInLeetCode.solutions
             return charArray.Where(ch => PATTERNOFOPEN.Contains(ch)).Count() == charArray.Count ||
                    charArray.Where(ch => PATTERNOFCLOSE.Contains(ch)).Count() == charArray.Count;
         }
+
+
+
 
 
 

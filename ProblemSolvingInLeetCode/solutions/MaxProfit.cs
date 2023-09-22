@@ -8,23 +8,30 @@ namespace ProblemSolvingInLeetCode.solutions
 {
     public class MaxProfitSolution
     {
+        // solution 0
         public int MaxProfit(int[] prices)
         {
-            //int maxProfit = 0;
             int minVal = prices[0];
             return  prices.Max(p => {
                 minVal = Math.Min(minVal, p);
                 return (p - minVal);
             });
+        }
 
-            //for (int i = 0; i < prices.Length; i++)
-            //{
-            //    minVal = Math.Min(minVal, prices[i]);
-            //    int val = prices[i] - minVal;
-            //    maxProfit = val > maxProfit ? val : maxProfit;
-            //}
+        // solution 0
+        public int MaxProfit_00(int[] prices)
+        {
+            int maxProfit = 0;
+            int minVal = prices[0];
 
-           // return maxProfit;
+            for (int i = 0; i < prices.Length; i++)
+            {
+                minVal = Math.Min(minVal, prices[i]);
+                int val = prices[i] - minVal;
+                maxProfit = val > maxProfit ? val : maxProfit;
+            }
+
+            return maxProfit;
         }
 
         // solution 2
