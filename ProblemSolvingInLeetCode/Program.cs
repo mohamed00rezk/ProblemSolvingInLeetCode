@@ -3,11 +3,17 @@ using ProblemSolvingInLeetCode.solutions;
 
 Console.WriteLine("Hello, World!");
 
-// // Valid Palindrome
-ValidPalindrome v = new ValidPalindrome();
-String s = "aa";
-var res = v.isPalindrome(s);
+// Longest Palindrome
+LongestPalindrome v = new LongestPalindrome();
+String s = "ccc";
+var res = v.longestPalindrome(s);
 Console.WriteLine("res: " + res);
+
+// // Valid Palindrome
+// ValidPalindrome v = new ValidPalindrome();
+// String s = "aa";
+// var res = v.isPalindrome(s);
+// Console.WriteLine("res: " + res);
 
 // // MaxProfit
 //MaxProfitSolution m = new MaxProfitSolution();
